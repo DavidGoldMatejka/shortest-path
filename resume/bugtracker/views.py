@@ -134,6 +134,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.assigned_developer = self.request.user
         return super().form_valid(form)
 
 
