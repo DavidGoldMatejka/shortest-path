@@ -51,7 +51,7 @@ class Post(models.Model):
     priority = models.IntegerField( choices=STATUS_CHOICES, default=1)
     status = models.CharField(choices=PROGRESS_STATUS, default='Open', max_length=25)
     ticket_type = models.CharField(choices=TYPE_CHOICES, default ='Features', max_length=25)
-    project = models.ForeignKey(MyProjects, on_delete=models.CASCADE, null=True, default=None)
+    project = models.ForeignKey(MyProjects, on_delete=models.CASCADE, default=1)
     #assigned_developer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='+')
     #assigned_developer = models.CharField(choices=all_user_choices, default=author, max_length=50)
     #status = models.Choices(choices=PROGRESS)
