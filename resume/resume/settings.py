@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/resume/resume/home/static',
+    '/resume_V4/resume/home/static',
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
