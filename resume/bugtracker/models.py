@@ -47,7 +47,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     priority = models.IntegerField( choices=STATUS_CHOICES, default=1)
     status = models.CharField(choices=PROGRESS_STATUS, default='Open', max_length=25)
     ticket_type = models.CharField(choices=TYPE_CHOICES, default ='Features', max_length=25)
