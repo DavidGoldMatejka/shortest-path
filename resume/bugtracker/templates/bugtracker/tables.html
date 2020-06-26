@@ -1,0 +1,133 @@
+{% extends "bugtracker/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<style>
+  /* Dropdown Button */
+.dropbtn {
+background-color: #fff;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+border-radius: 10px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: white;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color:  #fff;
+;}
+</style>
+
+<div class="container-fluid">
+
+
+  <!-- Page Heading -->
+
+
+  <div class="dropdown">
+
+    <button class="dropbtn">
+      <h1 class="h3 mb-2 text-gray-800">Task list for {{ project_title }}</h1> </button>
+    <div class="dropdown-content">
+      {% for project in projects %}
+      <a href="{% url 'tables-view' project.id %}">{{ project.title }} </a>
+      {% endfor %}
+    </div>
+
+  </div>
+  <a href="{% url 'post-create' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Add Task to Queue </a>
+  
+</div>
+
+
+  
+  <p class="mb-4"> </p>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Task Description</th>
+              <th>Priority</th>
+              <th>Ticket Type</th>
+              <th>Ticket Status</th>
+              <th>Project</th>
+              <th>Start date</th>
+              <th>Assigned Developer</th>
+              <th>Submitter</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Task</th>
+              <th>Task Description</th>
+              <th>Priority</th>
+              <th>Ticket Type</th>
+              <th>Ticket Status</th>
+              <th>Project</th>
+              <th>Start date</th>
+              <th>Assigned Developer</th>
+              <th>Submitter</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            {% for post in posts %}
+            <tr>
+              <td> <a href="{% url 'post-detail' post.id %}"> {{ post.title }} </a></td>
+              <td> {{ post.content }} </td>
+              <td>{{ post.priority}}</td>
+              <td>{{ post.ticket_type }}</td>
+              <td>{{ post.status }}</td>
+              <td> {{ post.project }} </td>
+              <td> {{post.date_posted}}</td>
+              <td> {{ post.author }} </td>
+              <td> {{post.author }} </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "users/login2.html" %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <style>
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+
+    </style>
+
+
+        <div class="content-section">
+            
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group"> 
+                    <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit"> Login </button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted"> 
+                    Don't Have an Account? <a class="ml-2" href="{% url 'register' %}"> Sign Up </a> 
+
+                </small>
+                <small class="text-muted"> 
+                    or <a class="ml-2" href="{% url 'bugtracker' %}"> Continue as guest </a> 
+
+                </small>
+            </div>
+        </div>
+
+{% endblock content %}

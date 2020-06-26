@@ -1,0 +1,35 @@
+{% extends "bugtracker/base.html" %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 15%;
+  width: 50%;
+
+}
+
+</style>
+
+        <span class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group"> 
+                    <legend class="border-bottom mb-4"> New Project </legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit"> Submit </button>
+                </div>
+            </form>
+
+        </span>
+
+{% endblock content %}

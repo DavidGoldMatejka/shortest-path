@@ -1,0 +1,137 @@
+{% extends "bugtracker/base.html" %} 
+{% block content %}
+
+    <style>
+      #card{
+        margin-left: 10px;
+      }
+
+    </style>
+
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-danger shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Ticket Title</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ object.title }} </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-primary shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Submitted by</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ object.author }}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+             
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Ticket Type</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ object.ticket_type }} </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-warning shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Project</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ object.project }} </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-info shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Status</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ object.status }} </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-xl-3 col-md-6 mb-4" id="card">
+                <div class="card border-left-secondary shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Priority</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> {{object.priority }} </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-xl-10 col-lg-5">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" >
+                    <h6 class="m-0 font-weight-bold text-primary"> Ticket Description </h6>
+                    <div class="dropdown no-arrow">
+                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Dropdown Header:</div>
+
+                      </div>
+                    </div>
+                  </div>
+
+              <div class="col-xl-3 col-md-6 mb-4">
+                <p class="article-content">{{ object.content }} <small class="text-muted">| {{ object.date_posted }}</small></p>
+                
+              <a class = "btn btn-primary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}"> Update</a>
+              <a class = "btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}" id="delete"> Remove from Queue</a>
+              </div>
+{% endblock content %}
