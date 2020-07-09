@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'bugtracker.apps.BugtrackerConfig',
     'users.apps.UsersConfig',
-    'maps.apps.MapsConfig',
+    'store.apps.StoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,5 +139,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'bugtracker'
 LOGIN_URL = 'login'
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 django_heroku.settings(locals())

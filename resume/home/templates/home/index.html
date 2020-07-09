@@ -8,6 +8,10 @@
         max-height: 100%;
         display: block; /* remove extra space below image */
     }
+
+      
+    
+        
     </style>
     <head>
         <meta charset="utf-8" />
@@ -90,8 +94,8 @@
                         
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left" style="color: grey;">
-                                    <h4 class="text-white"><a href="https://djangosportsbetting.herokuapp.com"> Dummy Gambling Website </a></h4>
+                                <div class="project-text w-100 my-auto text-center text-lg-left" style="color: white;">
+                                    <h4 class="text-white"><a href="https://djangosportsbetting.herokuapp.com"> No-Currency Gambling Website </a></h4>
                                     <p class="mb-0 text-white-50"> https://djangosportsbetting.herokuapp.com was completley coded by David. Some key features of this site are: </p>
                                     <br>
                                     <ul>AJAX calls to the backend: Coin values are updated without having to refresh the page</ul>
@@ -107,14 +111,17 @@
                 </div>
                 <!-- Project Two Row-->
                 <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'Photos/map.png' %}" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'Photos/cart.png' %}" alt="" /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Shortest-Path Algorithm  (In Progress)</h4>
-                                    <p class="mb-0 text-white-50">A path finding Algorithm meant to find the shortest path between a series of cordinates!</p>
-                                    <button type="button" class="btn-sm btn-primary"> <a href="{% url 'maps' %}" style="text-decoration: none; color: white;">View Project</a> </button>
+                                <div class="project-text w-100 my-auto text-center text-lg-right" style="color: white;">
+                                    <h4 class="text-white"><a href="{% url 'store' %}" >Fully Functional Ecommerce Site</a> </h4>
+                                    <p class="mb-0 text-white-50">An example fishing store, key features are: </p>
+                                    <br>
+                                    <ul>Login and Guest Checkout: If user is logged in then the name field is automatically filled out during checkout</ul>
+                                    <ul>Add to cart functionality: Items can be added to cart from the store and cart page. </ul>
+                                    <button type="button" class="btn-sm btn-primary"> <a href="{% url 'store' %}" style="text-decoration: none; color: white;">View Project</a> </button>
                                     <button type="button" class="btn-sm btn-secondary"> <a href="https://github.com/DavidGoldMatejka/shortest-path" style="text-decoration: none; color: white;">View Code</a> </button>
                                     <hr class="d-none d-lg-block mb-0 mr-0" />
                                     

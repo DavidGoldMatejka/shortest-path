@@ -1,0 +1,22 @@
+{% extends "store/main.html" %}
+{% load static %}
+{% block content %}
+
+
+<style>
+  #photo{
+    height: 400px;
+    width: 900px;
+  }
+</style>
+
+
+<div class="card mt-4">
+    <img class="card-img-top img-fluid" src="{% get_static_prefix %}images/{{ product.get_photo_display }}" alt="" id="photo">
+    <div class="card-body">
+      <h3 class="card-title">{{ product.name }}</h3>
+      <h4>${{ product.price }}</h4>
+      <button data-product="{{product.id}}" data-action = "add" class="btn btn-outline-primary add-btn update-cart">Add to Cart</button>
+      <a class="btn btn-outline-secondary" href="{% url 'store' %}">Back</a>
+  </div>
+{% endblock %}
