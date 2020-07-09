@@ -8,13 +8,12 @@ from .utils import cookieCart, cartData, guestOrder
 
 def store(request):
 	data = cartData(request)
-
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'products':products, 'cartItems':cartItems,}
 	return render(request, 'store/store.html', context)
 
 
@@ -45,7 +44,9 @@ def updateItem(request):
 	print('Action:', action)
 	print('Product:', productId)
 
+	
 	customer = request.user.customer
+	
 	product = Product.objects.get(id=productId)
 	order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
