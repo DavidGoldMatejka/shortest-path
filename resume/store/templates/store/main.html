@@ -12,6 +12,7 @@
 
 	<script type="text/javascript">
 		var user = '{{request.user}}'
+		var update_url = "{% url 'update_item' %}"
 
 		function getToken(name) {
 		    var cookieValue = null;

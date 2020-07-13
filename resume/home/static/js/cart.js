@@ -7,21 +7,21 @@ for (i = 0; i < updateBtns.length; i++) {
 		console.log('productId:', productId, 'Action:', action)
 		console.log('USER:', user)
 
-			/*
+			
 		if (user == 'AnonymousUser'){
 			addCookieItem(productId, action)
 		}else{
 			updateUserOrder(productId, action)
 		}
-		*/
-		addCookieItem(productId, action)
+		
+		
 	})
 }
 
 function updateUserOrder(productId, action){
 	console.log('User is authenticated, sending data...')
 
-		var url = '/update_item/'
+		var url = update_url
 
 		fetch(url, {
 			method:'POST',
